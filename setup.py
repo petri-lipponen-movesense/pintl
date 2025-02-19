@@ -5,7 +5,7 @@ setup(
     version="0.1.0",
     packages=find_packages(),
     description="Python Internationalization Library",
-    # long_description=open("README.md").read(),
+    long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     author="Petri Lipponen",
     author_email="info@movesense.com",
