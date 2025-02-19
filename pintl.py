@@ -12,7 +12,7 @@ def set_locale(language: str):
 
 def _(key: str, params: dict = {}):
     if PIntl.instance:
-        return PIntl.instance.get_string(key)
+        return PIntl.instance.get_string(key, params=params)
     else:
         raise Exception('No Intl instance found')
 
@@ -41,9 +41,15 @@ class PIntl:
         # Set the last instance to this instance
         PIntl.instance = self
 
-    def get_string(self, key: str):
+    def fill_in_params(self, string: str, params: dict):
+        for key in params:
+            key_match = f'{{{key}}}'
+            string = string.replace(key_match, params[key])
+        return string
+
+    def get_string(self, key: str, params: dict = {}):
         if key in self.translations[self.language]:
-            return self.translations[self.language][key]
+            return self.fill_in_params(self.translations[self.language][key], params=params)
         else:
             return f'##{key}##'
 

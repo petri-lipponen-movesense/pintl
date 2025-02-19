@@ -21,6 +21,18 @@ class TestPintl(unittest.TestCase):
         result = _("notification_text")
         self.assertEqual(result, "Movesense ECG: tallentaa taustalla...")
 
+    def test_en_parameter(self):
+        
+        self.PIntl.set_locale('en')
+        result = _("share_format", {'format': 'CSV'})
+        self.assertEqual(result, "Share CSV file?")
+    
+    def test_fi_parameter(self):
+        
+        self.PIntl.set_locale('fi')
+        result = _("share_format", {'format': 'CSV'})
+        self.assertEqual(result, "Jaa CSV tiedosto?")
+
     def test_default_lang(self):
         
         self.PIntl.set_locale('fr')
