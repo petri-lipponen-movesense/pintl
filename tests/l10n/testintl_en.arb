@@ -1,0 +1,17 @@
+
+{
+    "@@locale": "en",
+ 
+     "@_NOTIFICATION": {},
+     "notification_text": "Movesense ECG: Recording in background...",
+     "share_format_cancel": "Cancel {format} share?",
+     "@share_format": {
+         "description": "Export format name",
+         "placeholders": {
+             "format": {
+                 "type": "String",
+                 "example": "EDF+"
+             }
+         }
+     }
+ }

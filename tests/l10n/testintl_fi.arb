@@ -1,0 +1,16 @@
+{
+    "@@locale": "fi",
+ 
+     "@_NOTIFICATION": {},
+     "notification_text": "Movesense ECG: tallentaa taustalla...",
+     "share_format_cancel": "Peruuta {format} jakaminen?",
+     "@share_format": {
+         "description": "Jakomuodon nimi",
+         "placeholders": {
+             "format": {
+                 "type": "String",
+                 "example": "EDF+"
+             }
+         }
+     }
+ }
