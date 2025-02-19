@@ -44,7 +44,9 @@ class PIntl:
     def get_string(self, key: str):
         if key in self.translations[self.language]:
             return self.translations[self.language][key]
-        
+        else:
+            return f'##{key}##'
+
     def set_locale(self, language: str):
         languages = self.translations.keys()
 

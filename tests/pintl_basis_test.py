@@ -27,6 +27,12 @@ class TestPintl(unittest.TestCase):
         result = _("notification_text")
         self.assertEqual(result, "Movesense ECG: Recording in background...")
     
+    def test_default_string(self):
+        
+        self.PIntl.set_locale('fr')
+        result = _("non_existing_text")
+        self.assertEqual(result, "##non_existing_text##")
+    
     def test_sublang(self):
         
         self.PIntl.set_locale('fi-SV')

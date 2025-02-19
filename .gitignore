@@ -2,3 +2,6 @@
 /.vscode
 /__pycache__
 /pintl.egg-info
+**/*.pyc
+.DS_Store
+tests/__pycache__
