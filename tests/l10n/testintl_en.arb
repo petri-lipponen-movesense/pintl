@@ -13,5 +13,15 @@
                  "example": "EDF+"
              }
          }
+     },
+     "duration": "Duration is {days} days.",
+     "@duration": {
+         "description": "day number",
+         "placeholders": {
+             "days": {
+                 "type": "int",
+                 "example": 28
+             }
+         }
      }
  }

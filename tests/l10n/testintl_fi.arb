@@ -12,5 +12,16 @@
                  "example": "EDF+"
              }
          }
+     },
+     "duration": "Kesto on {days} päivää.",
+     "@duration": {
+         "description": "day number",
+         "placeholders": {
+             "days": {
+                 "type": "int",
+                 "example": 28
+             }
+         }
      }
+
  }

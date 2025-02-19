@@ -26,12 +26,19 @@ class TestPintl(unittest.TestCase):
         self.PIntl.set_locale('en')
         result = _("share_format", {'format': 'CSV'})
         self.assertEqual(result, "Share CSV file?")
+
+        result = _("duration", {'days': 25})
+        self.assertEqual(result, "Duration is 25 days.")
+        
     
     def test_fi_parameter(self):
         
         self.PIntl.set_locale('fi')
         result = _("share_format", {'format': 'CSV'})
         self.assertEqual(result, "Jaa CSV tiedosto?")
+
+        result = _("duration", {'days': 23})
+        self.assertEqual(result, "Kesto on 23 päivää.")
 
     def test_default_lang(self):
         

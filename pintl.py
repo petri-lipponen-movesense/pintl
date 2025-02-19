@@ -41,15 +41,20 @@ class PIntl:
         # Set the last instance to this instance
         PIntl.instance = self
 
-    def fill_in_params(self, string: str, params: dict):
+    def fill_in_params(self, string: str, param_defs: dict, params: dict):
+        # For now, no neet to see param_defs. Later when more complicated params are available, we might need to use it.
         for key in params:
             key_match = f'{{{key}}}'
-            string = string.replace(key_match, params[key])
+            string = string.replace(key_match, str(params[key]))
         return string
 
     def get_string(self, key: str, params: dict = {}):
         if key in self.translations[self.language]:
-            return self.fill_in_params(self.translations[self.language][key], params=params)
+            string = self.translations[self.language][key]
+            param_defs = {}
+            if "@"+key in self.translations[self.language]:
+                param_defs = self.translations[self.language]["@"+key]
+            return self.fill_in_params(self.translations[self.language][key], param_defs=param_defs, params=params)
         else:
             return f'##{key}##'
 
