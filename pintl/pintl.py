@@ -59,14 +59,22 @@ class PIntl:
             return f'##{key}##'
 
     def set_locale(self, language: str):
+        if not language:
+            self.language = self.default_lang
+            return
+
         languages = self.translations.keys()
 
+        # some environments, like flutter, use language code separated by underscore instead of dash
+        language = language.replace('_', '-')
+        
         # exact match
         if language in languages:
             self.language = language
             return
 
         # match with language code first part
+        
         primary_language = language.split('-')[0]
         for lang in languages:
             if lang.split('-')[0] == primary_language:
